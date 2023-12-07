@@ -8,7 +8,7 @@ canvas {
 
 :root {
   --dark-bg: rgba(15, 15, 15, 0.459);
-  --spacing: 150px;
+  --spacing: 50px;
 
   font-family: brandon-grotesque, sans-serif;
   font-weight: 400;
@@ -21,28 +21,15 @@ main {
   z-index: 99;
   display: grid;
 }
-/* 
-main {
-  width: 100vw;
-  color: white;
-  z-index: 99;
-  position: absolute;
-  width: 100%;
-  margin: 0px auto;
-  padding: 120px 0px;
-  
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
-
 header {
   background: var(--dark-bg);
+  /*margin-bottom: var(--spacing);*/
   grid-column: 2 / span 5;
-  font-size: 2.5rem;
-  padding: 2rem;
+  font-size: 1.5rem;
+  padding: 1rem;
   margin-bottom: var(--spacing);
-}
 
+}
 workhistory {
   grid-column: 2 / 8;
   padding: 1rem;
@@ -51,17 +38,15 @@ workhistory {
   line-height: 1.5;
   margin-bottom: var(--spacing);
 }
-
-linksPanel {
+linksPanel{
   grid-column: 2 / 8;
   background : var(--dark-bg);
   margin-bottom: var(--spacing); 
   padding: 1rem; 
 }
-
-contact {
+contact{
   grid-column: 2 / 8;
   background : var(--dark-bg);
   margin-bottom: var(--spacing);
   padding: 1rem; 
-} */
+}

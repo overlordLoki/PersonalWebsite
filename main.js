@@ -25,10 +25,6 @@ const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus);
 
-// //light
-// const pointLight = new THREE.PointLight(0xffffff);
-// pointLight.position.set(5, 5, 5);
-// scene.add(pointLight)
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight)
@@ -84,7 +80,7 @@ function moveCamera() {
   camera.position.y = t * -0.0002;
 }
 
-document.body.onscroll = moveCamera
+//document.body.onscroll = moveCamera
 
 function animate() {
   requestAnimationFrame(animate)
