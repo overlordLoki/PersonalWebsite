@@ -38,6 +38,22 @@ profile {
   margin-bottom: var(--spacing);
   padding: 1rem;
 }
+skills {
+  grid-column: 2 / 8;
+  background: var(--dark-bg);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing);
+  padding: 1rem;
+}
+softskills{
+  grid-column: 2 / 8;
+  background: var(--dark-bg);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing);
+  padding: 1rem;
+}
 workhistory {
   grid-column: 2 / 8;
   padding: 1rem;
@@ -45,6 +61,22 @@ workhistory {
   font-size: 1.25rem;
   line-height: 1.5;
   margin-bottom: var(--spacing);
+}
+projects {
+  grid-column: 2 / 8;
+  background: var(--dark-bg);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing);
+  padding: 1rem;
+}
+education {
+  grid-column: 2 / 8;
+  background: var(--dark-bg);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacing);
+  padding: 1rem;
 }
 linksPanel{
   grid-column: 2 / 8;
