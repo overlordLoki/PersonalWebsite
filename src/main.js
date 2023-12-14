@@ -1,4 +1,3 @@
-import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 // Setup
@@ -19,7 +18,7 @@ camera.position.setX(-5);
 renderer.render(scene, camera)
 
 // Torus
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+const geometry = new THREE.TorusGeometry(6, 2, 16, 100);
 const donutTexture = new THREE.TextureLoader().load('imgs/donut.jpg');
 const material = new THREE.MeshStandardMaterial({ 
   map: donutTexture
@@ -33,7 +32,7 @@ const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight)
 
 // Background
-const spaceTexture = new THREE.TextureLoader().load('imgs/space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('imgs/space3.jpg');
 scene.background = spaceTexture;
 
 const controls = new OrbitControls(camera, renderer.domElement)

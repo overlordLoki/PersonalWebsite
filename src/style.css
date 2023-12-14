@@ -32,21 +32,35 @@ profile , skills , workhistory , projects , education , linksPanel {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
-/* Update the color and style of your buttons */
-button {
+Button {
   background-color: var(--accent-color);
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.25rem;
+  animation: pulse 2s infinite alternate;
 }
 
-/* Add a hover effect for buttons */
-button:hover {
-  background-color: #ff5347; /* Darken the color on hover */
+/* Define the pulse animation */
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
+
+button:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgba(255, 179, 191, 0.6);
+  animation: none;
+}
+
+
+
 a {
   text-decoration: none;
 }
