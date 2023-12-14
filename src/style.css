@@ -34,12 +34,13 @@ profile , skills , workhistory , projects , education , linksPanel {
 
 /* Update the color and style of your buttons */
 button {
-  background-color: rgb(208, 255, 0);
+  background-color: var(--accent-color);
   color: rgb(0, 0, 0);
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1.25rem;
 }
 
 /* Add a hover effect for buttons */
