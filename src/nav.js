@@ -9,14 +9,32 @@ function toggleDisplay(elementId) {
         element.style.display = "none";
     }
 }
-/*
-    * Add event listeners to the buttons
-    *
-*/
+
+// techSkills
 document.getElementById("techSkillsbutton").onclick = function () {
     toggleDisplay("techSkills");
 };
-
+// softskills
 document.getElementById("softskillsbutton").onclick = function () {
     toggleDisplay("softskills");
 };
+// workhist
+document.getElementById("historybutton").onclick = function () {
+    toggleDisplay("workhist");
+};
+// aboutme
+document.getElementById("aboutmebutton").onclick = function () {
+    toggleDisplay("aboutme");
+};
+// esportProject
+document.getElementById("esportProjectbutton").onclick = function () {
+    toggleDisplay("esportProject");
+};
+// videoGameProject
+document.getElementById("videoGameProjectbutton").onclick = function () {
+    toggleDisplay("videoGameProject");
+};
+// unibutton
+document.getElementById("unibutton").onclick = function () {
+    toggleDisplay("uni");
+}
