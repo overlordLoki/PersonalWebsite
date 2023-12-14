@@ -34,8 +34,8 @@ profile , skills , workhistory , projects , education , linksPanel {
 
 /* Update the color and style of your buttons */
 button {
-  background-color: var(--accent-color);
-  color: white;
+  background-color: rgb(208, 255, 0);
+  color: rgb(0, 0, 0);
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
@@ -44,13 +44,22 @@ button {
 
 /* Add a hover effect for buttons */
 button:hover {
-  background-color: #ff6347; /* Darken the color on hover */
+  background-color: #ff5347; /* Darken the color on hover */
 }
-
+a {
+  text-decoration: none;
+}
 a:hover {
+  color: rgb(255, 0, 0);
   text-decoration: underline;
 }
+#transcript-link {
+  color: #3498db; /* Change this to your desired color for the transcript link */
+}
 
+#transcript-link:hover {
+  color: #1e6ac0; /* Change this to your desired hover color for the transcript link */
+}
 techSkills , softSkills , workhist , aboutme , esportProject , uni , videoGameProject{
   display: none;
 }

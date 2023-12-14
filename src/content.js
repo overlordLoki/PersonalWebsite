@@ -55,84 +55,47 @@ var universityContent = `
 - Major: Computer Science<br />
 - Minor: Data Science<br />
 - Specialization: Artificial Intelligence<br />
-<a href="pdf/Transcript.pdf" target="_blank">👨‍🎓 Transcript</a>
+<a id="transcript-link" href="pdf/Transcript.pdf">👨‍🎓 Transcript</a>
 `;
 addHTMLToElement("uni", universityContent);
 
+var techSkillsContent = `
+    <ul>
+        <li>Java</li>
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>Rust</li>
+        <li>C/C++</li>
+        <li>C# (.NET)</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>React, Node.js</li>
+        <li>API Development</li>
+        <li>SQL, MongoDB</li>
+        <li>Express JS</li>
+        <li>Testing: Jest, Mocha, Chai</li>
+        <li>Cloud: AWS, Azure, Azure AD</li>
+        <li>Database Management</li>
+        <li>DevOps: Git, Jenkins, Docker</li>
+        <li>Agile/Scrum Methodologies</li>
+        <li>Linux</li>
+        <li>Windows</li>
+        <li>Markdown</li>
+    </ul>
+`;
+addHTMLToElement("techSkills", techSkillsContent);
 
 
-
-
-
-
-
-/**
- * appends a list of items to an element with the specified ID
- * @param {*} elementId 
- * @param {*} itemList 
- * @returns 
- */
-function createListAndAppendToElement(elementId, itemList) {
-    // Get the element with the specified ID
-    var targetElement = document.getElementById(elementId);
-
-    // Check if the target element exists
-    if (!targetElement) {
-        console.error("Element with ID " + elementId + " not found.");
-        return;
-    }
-
-    // Create a new unordered list element
-    var ulElement = document.createElement("ul");
-
-    // Loop through the items and create list items
-    itemList.forEach(function (item) {
-        var liElement = document.createElement("li");
-        liElement.textContent = item;
-        ulElement.appendChild(liElement);
-    });
-
-    // Append the unordered list to the target element
-    targetElement.appendChild(ulElement);
-}
-
-// List of technologies
-var technologies = [
-    "Java",
-    "Python",
-    "JavaScript",
-    "Rust",
-    "C/C++",
-    "C# (.NET)",
-    "HTML",
-    "CSS",
-    "React, Node.js",
-    "API Development",
-    "SQL, MongoDB",
-    "Express JS",
-    "Testing: Jest, Mocha, Chai",
-    "Cloud: AWS, Azure, Azure AD",
-    "Database Management",
-    "DevOps: Git, Jenkins, Docker",
-    "Agile/Scrum Methodologies",
-    "Linux",
-    "Windows",
-    "Markdown"
-];
-
-// Example usage: Create a list for "techSkills" element
-createListAndAppendToElement("techSkills", technologies);
-
-// List of soft skills
-var softSkills = [
-    "Strong problem-solving and analytical skills",
-    "Ability to work independently and in a team environment",
-    "Communication",
-    "Problem Solving",
-    "Critical Thinking",
-    "Creativity",
-    "Self-management",
-    "Conflict resolution"
-];
-createListAndAppendToElement("softskills", softSkills);
-
+var softskillsContent = `
+    <ul>
+        <li>Strong problem-solving and analytical skills</li>
+        <li>Ability to work independently and in a team environment</li>
+        <li>Communication</li>
+        <li>Problem Solving</li>
+        <li>Critical Thinking</li>
+        <li>Creativity</li>
+        <li>Self-management</li>
+        <li>Conflict resolution</li>
+    </ul>
+`;
+addHTMLToElement("softskills", softskillsContent);
