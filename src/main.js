@@ -16,7 +16,10 @@ camera.position.setZ(30);
 camera.position.setX(-5);
 
 renderer.render(scene, camera)
-
+renderer.autoClear = false;
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
+renderer.setClearColor(0x000000, 0.0);
 // Torus
 const geometry = new THREE.TorusGeometry(6, 2, 16, 100);
 const donutTexture = new THREE.TextureLoader().load('imgs/donut.jpg');
@@ -84,6 +87,19 @@ function moveCamera() {
 }
 
 //document.body.onscroll = moveCamera
+
+window.addEventListener(
+  "resize",
+  function () {
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+  },
+  false
+);
+
 
 function animate() {
   requestAnimationFrame(animate)
