@@ -55,7 +55,7 @@ var universityContent = `
 - Major: Computer Science<br />
 - Minor: Data Science<br />
 - Specialization: Artificial Intelligence<br />
-<a id="transcript-link" href="pdf/Transcript.pdf">👨‍🎓 Transcript</a>
+<a id="transcript-link" href="pdf/Transcript.pdf" target="_blank">👨‍🎓 Transcript</a>
 `;
 addHTMLToElement("uni", universityContent);
 
