@@ -44,6 +44,25 @@ scene.add(ambientLight)
 // const spaceTexture = new THREE.TextureLoader().load('imgs/space3.jpg');
 // scene.background = spaceTexture;
 
+// Get the canvas element and its context
+var canvas = document.getElementById('background');
+var ctx = canvas.getContext('2d');
+
+// Create an Image object
+var img = new Image();
+
+// Set the source of the image
+img.src = 'imgs/space3.jpg';
+
+// When the image is loaded, draw it on the canvas
+img.onload = function() {
+    // Set the canvas size to match the image size
+    canvas.width = img.width;
+    canvas.height = img.height;
+
+    // Draw the image on the canvas
+    ctx.drawImage(img, 0, 0);
+};
 
 const controls = new OrbitControls(camera, renderer.domElement)
 
