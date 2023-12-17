@@ -1,5 +1,8 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { EffectComposer } from "/node_modules/three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "/node_modules/three/examples/jsm/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "/node_modules/three/examples/jsm/postprocessing/UnrealBloomPass.js";
 // Setup
 
 const scene = new THREE.Scene();
@@ -34,9 +37,13 @@ scene.add(torus);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight)
 
-// Background
-const spaceTexture = new THREE.TextureLoader().load('imgs/space3.jpg');
-scene.background = spaceTexture;
+//make the backgorund fully transparent
+// renderer.setClearColor(0x000000, 0.0);
+
+// // Background
+// const spaceTexture = new THREE.TextureLoader().load('imgs/space3.jpg');
+// scene.background = spaceTexture;
+
 
 const controls = new OrbitControls(camera, renderer.domElement)
 
@@ -45,19 +52,43 @@ const controls = new OrbitControls(camera, renderer.domElement)
 // scene.add(gridHelper);
 
 
-//moon
-const moonTexture = new THREE.TextureLoader().load('imgs/moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('imgs/normal.jpg');
-const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshStandardMaterial({ 
-    map: moonTexture,
-    normalMap: normalTexture
-  })
+// //moon
+// const moonTexture = new THREE.TextureLoader().load('imgs/moon.jpg');
+// const normalTexture = new THREE.TextureLoader().load('imgs/normal.jpg');
+// const moon = new THREE.Mesh(
+//   new THREE.SphereGeometry(3, 32, 32),
+//   new THREE.MeshStandardMaterial({ 
+//     map: moonTexture,
+//     normalMap: normalTexture
+//   })
+// );
+
+// scene.add(moon);
+
+//sun object
+const sun = new THREE.Mesh(
+  new THREE.SphereGeometry(1, 32, 32),
+  new THREE.MeshBasicMaterial({ color: 0xFDB813 })
 );
+sun.position.set(0, 0, 0);
+scene.add(sun);
 
-scene.add(moon);
-
+// bloom renderer
+const renderScene = new RenderPass(scene, camera);
+const bloomPass = new UnrealBloomPass(
+  new THREE.Vector2(window.innerWidth, window.innerHeight),
+  1.5,
+  0.4,
+  0.85
+);
+bloomPass.threshold = 0;
+bloomPass.strength = 3; //intensity of glow
+bloomPass.radius = 0;
+const bloomComposer = new EffectComposer(renderer);
+bloomComposer.setSize(window.innerWidth, window.innerHeight);
+bloomComposer.renderToScreen = true;
+bloomComposer.addPass(renderScene);
+bloomComposer.addPass(bloomPass);
 
 //stars
 function addStar() {
@@ -100,11 +131,14 @@ window.addEventListener(
 );
 
 
+
+
 function animate() {
   requestAnimationFrame(animate)
   torus.rotation.x += 0.01;
   torus.rotation.y += 0.005;
   torus.rotation.z += 0.01;
+  bloomComposer.render();
   controls.update()
   renderer.render(scene, camera)
 }
