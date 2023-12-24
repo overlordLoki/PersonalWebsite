@@ -23,10 +23,13 @@ renderer.autoClear = false;
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio ? window.devicePixelRatio : 1);
 renderer.setClearColor(0x000000, 0.0);
+
 // Torus
 const geometry = new THREE.TorusGeometry(6, 2, 16, 100);
+const colorBlue = new THREE.Color(0x0000ff);
 const donutTexture = new THREE.TextureLoader().load('imgs/donut.jpg');
 const material = new THREE.MeshStandardMaterial({ 
+  color: colorBlue,
   map: donutTexture
 });
 const torus = new THREE.Mesh(geometry, material);
@@ -37,38 +40,13 @@ scene.add(torus);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight)
 
-//make the backgorund fully transparent
-// renderer.setClearColor(0x000000, 0.0);
 
 // // Background
 // const spaceTexture = new THREE.TextureLoader().load('imgs/space3.jpg');
 // scene.background = spaceTexture;
 
-// Get the canvas element and its context
-var canvas = document.getElementById('background');
-var ctx = canvas.getContext('2d');
-
-// Create an Image object
-var img = new Image();
-
-// Set the source of the image
-img.src = 'imgs/space3.jpg';
-
-// When the image is loaded, draw it on the canvas
-img.onload = function() {
-    // Set the canvas size to match the image size
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    // Draw the image on the canvas
-    ctx.drawImage(img, 0, 0);
-};
 
 const controls = new OrbitControls(camera, renderer.domElement)
-
-//helper
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(gridHelper);
 
 
 // //moon
