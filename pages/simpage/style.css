@@ -1,29 +1,14 @@
 /* style.css */
 
+/* Body with grid layout */
 body {
-    margin: 0;
-    overflow: hidden;
-  }
-  
-  #controls {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  button, input {
-    margin-right: 10px;
-    margin-bottom: 5px;
-    padding: 8px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  canvas {
-    display: block;
-  }
-  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Controls section with blue background */
+#controls {
+  background-color: #3498db; /* Blue color */
+  padding: 20px; /* Adjust padding as needed */
+}
+

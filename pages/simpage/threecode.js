@@ -1,5 +1,7 @@
 //-------------------------------------------------------------------------------------------------//
 import * as THREE from 'three';
+import { Fish } from './custemObjects';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 //-------------------------------------------------------------------------------------------------//
 // Accessing controls
 const runButton = document.getElementById('runButton');
@@ -10,94 +12,127 @@ runButton.addEventListener('click', startAnimation);
 stopButton.addEventListener('click', stopAnimation);
 speedInput.addEventListener('input', updateSpeed);
 //-------------------------------------------------------------------------------------------------//
-// Your animation functions go here
 
-function startAnimation() {
-  // Code to start your animation
-}
-
-function stopAnimation() {
-  // Code to stop your animation
-}
-
-function updateSpeed() {
-  const speed = speedInput.value;
-  // Code to update the speed of your animation
-}
+function stopAnimation() {console.log("stopAnimation()");}
+function updateSpeed() {const speed = speedInput.value; console.log("updateSpeed()", speed);}
 //-------------------------------------------------------------------------------------------------//
-// threecode.js
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({
+  canvas: document.querySelector('#canvas'),
+  alpha: true
+});
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+camera.position.setX(0.00);
+camera.position.setY(4.00);
+camera.position.setZ(-10.0);
+renderer.autoClear = true;
+renderer.setClearColor(0x000000, 1);
+//document.querySelector('#canvas') hight and width
+const canvas = document.querySelector('#canvas');
+//-------------------------------------------------------------------------------------------------//
+//background space3
+const spaceTexture = new THREE.TextureLoader().load('/../imgs/space3.jpg');
+scene.background = spaceTexture;
+//light
+const ambientLight = new THREE.AmbientLight(0xffffff);
+scene.add(ambientLight)
+//-------------------------------------------------------------------------------------------------//
+const blue = new THREE.Color(0x0000ff);
+const myFish = new Fish(0, 0, 0, 0xff0000, 45); // Red fish initially facing 45 degrees
+scene.add(myFish.object);
+//-------------------------------------------------------------------------------------------------//
 
-import * as THREE from 'three';
+// Create a fish tank
+const tankSize = 20;
+const tankGeometry = new THREE.BoxGeometry(tankSize, tankSize, tankSize);
+const tankMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, transparent: true, opacity: 0 });
+const fishTank = new THREE.Mesh(tankGeometry, tankMaterial);
+scene.add(fishTank);
+// Set the position of the fish tank
+fishTank.position.set(0, 0, 0);
+// Create an outline for the fish tank
+const edges = new THREE.EdgesGeometry(tankGeometry);
+const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff }));
+fishTank.add(line);
 
-// Accessing the canvas element
-const canvas = document.getElementById('canvas');
 
-// Getting the 2D rendering context
-const context = canvas.getContext('2d');
+//-------------------------------------------------------------------------------------------------//
 
-// Your Three.js code goes here
+// ...
 
-// Accessing controls
-const runButton = document.getElementById('runButton');
-const stopButton = document.getElementById('stopButton');
-const speedInput = document.getElementById('speedInput');
+// ...
 
-// Adding event listeners
-runButton.addEventListener('click', startAnimation);
-stopButton.addEventListener('click', stopAnimation);
-speedInput.addEventListener('input', updateSpeed);
+// Time interval for changing direction (10 seconds)
+const changeDirectionInterval = 10 * 1000; // in milliseconds
+let lastDirectionChangeTime = Date.now();
 
-// Creating a Three.js scene for the 2D panel
-const panelScene = new THREE.Scene();
+// ...
 
-// Creating a 2D panel with a plane geometry
-const panelGeometry = new THREE.PlaneGeometry(200, 200);
-const panelMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, side: THREE.DoubleSide });
-const panelMesh = new THREE.Mesh(panelGeometry, panelMaterial);
+function moveAllFish() {
+  const wallHitThreshold = 0.5;
+  const minDistanceToWall = 0.5; // Minimum distance to wall
 
-// Positioning the panel in the center of the canvas
-panelMesh.position.set(canvas.width / 2, canvas.height / 2, 0);
+  // Check if the fish is out of bounds and bounce off the walls
+  if (
+    myFish.object.position.x > tankSize / 2 - wallHitThreshold ||
+    myFish.object.position.x < -tankSize / 2 + wallHitThreshold
+  ) {
+    myFish.velocity.x *= -1; // Reverse the x component of velocity
+    myFish.object.position.x = Math.max(-tankSize / 2 + minDistanceToWall, Math.min(tankSize / 2 - minDistanceToWall, myFish.object.position.x));
+  }
 
-// Adding the panel to the scene
-panelScene.add(panelMesh);
+  if (
+    myFish.object.position.z > tankSize / 2 - wallHitThreshold ||
+    myFish.object.position.z < -tankSize / 2 + wallHitThreshold
+  ) {
+    myFish.velocity.z *= -1; // Reverse the z component of velocity
+    myFish.object.position.z = Math.max(-tankSize / 2 + minDistanceToWall, Math.min(tankSize / 2 - minDistanceToWall, myFish.object.position.z));
+  }
 
-// Your animation functions go here
+  // Check if it's time to change direction
+  const currentTime = Date.now();
+  if (currentTime - lastDirectionChangeTime > changeDirectionInterval) {
+    const randomDirection = getRandomDirection();
+    myFish.setDirection(randomDirection.x, randomDirection.y, randomDirection.z);
+    lastDirectionChangeTime = currentTime; // Update the last direction change time
+  }
 
-function startAnimation() {
-  // Code to start your animation
-  animate();
+  myFish.move();
 }
 
-function stopAnimation() {
-  // Code to stop your animation
+// ...
+
+
+function getRandomDirection() {
+  const maxChange = 45; // Maximum change in degrees
+
+  const randomChangeX = (Math.random() - 0.5) * maxChange;
+  const randomChangeY = (Math.random() - 0.5) * maxChange;
+  const randomChangeZ = (Math.random() - 0.5) * maxChange;
+
+  const currentDirection = myFish.direction;
+
+  const newX = currentDirection.x + THREE.MathUtils.degToRad(randomChangeX);
+  const newY = currentDirection.y + THREE.MathUtils.degToRad(randomChangeY);
+  const newZ = currentDirection.z + THREE.MathUtils.degToRad(randomChangeZ);
+
+  return { x: newX, y: newY, z: newZ };
 }
 
-function updateSpeed() {
-  const speed = speedInput.value;
-  // Code to update the speed of your animation
-}
 
-// Drawing panel functions
-function drawSquare(x, y, size, color) {
-  context.fillStyle = color;
-  context.fillRect(x, y, size, size);
-}
+// ...
+function startAnimation() {console.log(myFish.object.position);}
 
-function clearCanvas() {
-  context.clearRect(0, 0, canvas.width, canvas.height);
-}
-
-// Example usage
-drawSquare(50, 50, 30, 'blue');
-
+//-------------------------------------------------------------------------------------------------//
+const controls = new OrbitControls(camera, renderer.domElement)
 // Your animation loop
 function animate() {
-  // Your animation logic using Three.js goes here
-
-  // Render the 2D panel scene
-  renderer.render(panelScene, camera);
-
-  // Continue the animation loop
+  controls.update();
+  moveAllFish();
+  renderer.render(scene, camera);
   requestAnimationFrame(animate);
 }
+animate();
 
