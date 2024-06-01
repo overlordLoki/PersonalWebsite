@@ -1,0 +1,13 @@
+{
+    "id": "job2",
+    "title": "Tutor",
+    "company": "Victoria University of Wellington",
+    "description": "Provided academic support and guidance to students in computer science courses.",
+    "technologies": "Discord, Various Computer Science Topics",
+    "accomplishments": [
+        "Offered personalized tutoring sessions to help students understand complex concepts.",
+        "Assisted students with their assignments and projects, ensuring they met academic standards.",
+        "Developed and shared study resources, including practice problems and tutorial videos.",
+        "Provided constructive feedback on student work to promote continuous improvement."
+    ]
+}

@@ -11,14 +11,6 @@ function addHTMLToElement(elementId, htmlContent) {
     targetElement.innerHTML = htmlContent;
 }
 
-var workHistory = [
-    "<strong>Head Tutor</strong><br /><em>Victoria University of Wellington</em><br /><em>2023 - Present</em><br />- Led a team of 10 tutors, organized and coordinated tutor activities.<br />- Conducted labs and tutorials, provided HR support for tutor-related concerns.<br />- Marked assignments, ran and moderated class Discord servers.",
-    "<strong>Software Engineer</strong><br /><em>New Zealand Defence Force</em><br /><em>11/2022 - 03/2023 (3 Month Contract)</em><br />- Managed digital identities within the Identity and Access Management framework.<br />- Implemented Agile Technologies, developed PowerShell scripts, and designed Azure Automation solutions.<br />- Maintained security in a coding environment following strict protocols.",
-    "<strong>Contract Software Engineer</strong><br /><em>Small Business</em><br /><em>2021 - 2021 (3 Month Contract)</em><br />- Developed a software solution that streamlined tasks through automation.<br />- Conducted testing, debugging, and established hosting servers.<br />- Provided detailed instructions and leveraged REST API for development.",
-    "<strong>Software Engineer</strong><br /><em>X-Coin Solutions</em><br /><em>2013 - 2021</em><br />- Improved code quality and reduced errors through best practices in code review and testing.<br />- Built and maintained scalable web applications and contributed to AI-based trading algorithms.<br />- Collaborated with product managers to define project requirements and timelines."
-];
-addHTMLToElement("workhist", workHistory.join("<hr/>"));
-
 var aboutMeContent = `
     <p>👨‍💻 I’m the type of engineer who runs Linux natively on their laptop and desktop. A fun Saturday for me is building a home server or
       building my own Cloud system. I'm a tech enthusiast who enjoys learning new things and I have a passion for creating and

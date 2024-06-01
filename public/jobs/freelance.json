@@ -1,0 +1,16 @@
+{
+    "id": "job4",
+    "title": "Software Engineer",
+    "company": "Freelance",
+    "dates": "2021",
+    "description": "Developed a business solution software, focusing on backend development and server setup.",
+    "technologies": "REST API, Automation, Backend Development, Server Management",
+    "accomplishments": [
+        "Developed a software solution that streamlined tasks through automation.",
+        "Created a backend application to extract data for the front-end.",
+        "Conducted extensive testing and bug-fixing to ensure program reliability.",
+        "Established a hosting server to facilitate program accessibility.",
+        "Provided detailed instructions on using and maintaining the program and server.",
+        "Leveraged a third-party website's REST API to solve development problems."
+    ]
+}

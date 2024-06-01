@@ -1,0 +1,15 @@
+{
+    "id": "job3",
+    "title": "Software Engineer",
+    "company": "New Zealand Defence Force",
+    "dates": "November 2022 - March 2023",
+    "description": "Managed digital identities and developed automation tools in a security-conscious environment.",
+    "technologies": "PowerShell, Azure, Agile",
+    "accomplishments": [
+        "Managed digital identities within the Identity and Access Management framework.",
+        "Created a secure, custom PowerShell script to automate manual processes.",
+        "Developed automation tools and applications for Azure.",
+        "Produced project documentation for reference and future use cases.",
+        "Worked within a security-conscious coding environment, following strict protocols."
+    ]
+}
