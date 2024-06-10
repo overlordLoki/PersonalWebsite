@@ -35,7 +35,7 @@ function createJobContentDiv(job) {
 
 // Function to add a job to the work history section
 function addJobToWorkHistory(job) {
-    var workHist = document.getElementById("workhist");
+    var workHist = document.getElementById("History");
     var button = createJobButton(job);
     var jobDiv = createJobContentDiv(job);
     workHist.appendChild(button);

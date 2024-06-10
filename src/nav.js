@@ -20,7 +20,7 @@ document.getElementById("softskillsbutton").onclick = function () {
 };
 // workhist
 document.getElementById("historybutton").onclick = function () {
-    toggleDisplay("workhist");
+    toggleDisplay("History");
 };
 // aboutme
 document.getElementById("aboutmebutton").onclick = function () {
