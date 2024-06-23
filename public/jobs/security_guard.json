@@ -1,17 +1,15 @@
 {
     "id": "job5",
     "title": "Security Guard",
-    "dates": "2016 - 2020",
+    "company": "Recon Security",
+    "dates": "2017 - January 2021",
     "description": "Ensured safety and security through regular patrols, incident management, and customer service.",
     "technologies": "Surveillance Systems",
     "accomplishments": [
-        "Patrolled premises regularly to maintain order and establish presence.",
-        "Responded to alarms and dispatched authorities when necessary.",
-        "Provided assistance to customers, visitors, and employees, ensuring a positive experience.",
-        "Documented daily activities and incidents, producing clear and concise reports.",
-        "Deescalated potential conflicts and managed confrontations with professionalism.",
-        "Monitored security cameras and conducted regular inspections to prevent theft, vandalism, and other security breaches.",
-        "Acted quickly in emergency situations, following established protocols.",
-        "Maintained up-to-date knowledge of security procedures and participated in regular training sessions."
+        "Regular patrols to maintain order and visibility",
+        "addressed alarms and coordinated with authorities",
+        "deescalated conflicts and managed confrontations professionally",
+        "monitored cameras and performed inspections to prevent security breaches",
+        "acted swiftly during emergencies, following protocols."
     ]
 }

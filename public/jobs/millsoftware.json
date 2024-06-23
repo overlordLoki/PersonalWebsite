@@ -2,14 +2,15 @@
     "id": "job1",
     "title": "Software Developer",
     "company": "Millsoftware",
-    "dates": "April 2023 - Present",
+    "dates": "February 2024 - May 2024 (3-Month Contract)",
     "description": "Developed and maintained software with a focus on cybersecurity and Linux administration.",
-    "technologies": "Linux, Fapolicy, Active Directory, Ubuntu, Agile (Scrum), Bash, SQL",
+    "technologies": "Linux, Fapolicy, Active Directory, Ubuntu, Agile (Scrum), Bash, SQL.",
     "accomplishments": [
-        "Implemented Essential Eight cybersecurity measures.",
-        "Integrated Fapolicy for Linux application whitelisting.",
-        "Managed Active Directory.",
-        "Upgraded systems OS from Ubuntu LTS 20.04 to Ubuntu LTS 24.04.",
-        "Created scripts to resolve database issues."
+        "Implemented Essential Eight cybersecurity measures",
+        "integrated Fapolicy for Linux application whitelisting",
+        "managed Active Directory",
+        "upgraded systems OS from Ubuntu LTS 20.04 to Ubuntu LTS 24.04",
+        "created scripts to resolve database issues",
+        "participated in Agile (Scrum) planning."
     ]
 }

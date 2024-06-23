@@ -40,39 +40,55 @@ Button {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1.25rem;
-  animation: pulse 2s infinite alternate;
+  animation: slide-in 1s ease-in-out infinite alternate;
+  transition: background-color 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+  position: relative; /* Needed for the pseudo-element */
 }
 
-/* Define the pulse animation */
-@keyframes pulse {
-  from {
-    transform: scale(1);
+@keyframes slide-in {
+  0% {
+    transform: translateY(0);
   }
-  to {
-    transform: scale(1.2);
+  100% {
+    transform: translateY(5px); /* Adjust distance as needed */
   }
 }
 
-button:hover {
-  color: rgb(255, 255, 255);
-  background-color: rgba(255, 179, 191, 0.6);
-  animation: none;
+Button:hover {
+  background-color: rgba(56, 100, 245, 0.6); /* Adjust glow color and opacity */
+  box-shadow: 0 0 10px rgba(112, 112, 255, 0.966); /* Adjust shadow color and spread */
 }
 
+
+/* Default link styles */
 a {
+  color: rgb(23, 27, 248); /* Default color for links */
   text-decoration: none;
 }
-a:hover {
-  color: rgb(255, 0, 0);
-  text-decoration: underline;
-}
-#transcript-link {
-  color: #3498db; /* Change this to your desired color for the transcript link */
+
+
+/* Visited link styles */
+a:visited {
+  color: rgb(100, 15, 134); /* Color for visited links */
 }
 
-#transcript-link:hover {
-  color: #1e6ac0; /* Change this to your desired hover color for the transcript link */
+
+/* Hover styles */
+a:hover {
+  color: rgb(146, 7, 173); /* Color on hover */
 }
+
 techSkills , softSkills , workhist , aboutme , esportProject , uni , videoGameProject{
   display: none;
+}
+
+#myList {
+  list-style-type: none;
+  padding: 0; /* Optional: Remove default padding */
+  margin: 0; /* Optional: Remove default margin */
+}
+
+#myList li {
+  /* Optional: Add some padding or margin to each list item */
+  padding-left: 20px;
 }

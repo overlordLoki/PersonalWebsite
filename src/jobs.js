@@ -24,10 +24,11 @@ function createJobContentDiv(job) {
     var jobDiv = document.createElement("div");
     jobDiv.id = job.id + 'Content';
     jobDiv.innerHTML = `
-        <strong>${job.title}</strong><br />
-        - Description: ${job.description}<br />
-        - Technologies Used: ${job.technologies}<br />
-        - Accomplishments: ${job.accomplishments}<br />
+      <br />  🏢 <strong>${job.company}</strong> 🏢<br />
+      📅 <em>${job.dates}</em> <br /> 
+       <br /> 🌟 Overview: ${job.description}<br />
+       <br /> 💻 Technologies Used: ${job.technologies}<br />
+        <br />📋 Description: ${job.accomplishments}<br />
     `;
     jobDiv.style.display = "none";
     return jobDiv;
@@ -49,10 +50,11 @@ async function fetchJobFiles() {
         // List of JSON file URLs
         const files = [
             './jobs/millsoftware.json',
-            './jobs/nzdf.json',
             './jobs/tutor.json',
+            './jobs/nzdf.json',
             './jobs/freelance.json',
             './jobs/security_guard.json',
+            './jobs/sale.json',
             './jobs/hca.json',
             // Add more job files as needed
         ];
