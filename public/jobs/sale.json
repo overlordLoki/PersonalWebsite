@@ -1,9 +1,13 @@
 {
     "id": "job7",
-    "title": "",
-    "company": "",
-    "dates": "",
-    "description": "",
-    "technologies": "",
-    "accomplishments": []
+    "title": "Salesman",
+    "company": "Mr Thank You",
+    "dates": "2017",
+    "description": "Excelled in sales, customer service & inventory management, driving business success.",
+    "technologies": "Point-of-sales Systems, Cash/Eftpos Machines",
+    "accomplishments": [
+        "Assisted customers with product selection, answered questions, and provided recommendations",
+        "processed transactions, handled cash, and maintained accurate records",
+        "managed stock levels, restocked shelves, and ensured the store was well-organised.",
+        "maintained and exceeded management's sales targets, set additional personal goals, and successfully achieved them"    ]
 }
