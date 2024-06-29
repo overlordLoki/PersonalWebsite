@@ -30,7 +30,6 @@ var esportProjectContent = `
     <br />📝 Description: Developed a trading algorithm using statistics and machine learning for E-Sports betting. Built a web scraping backend for
     data collection and created a user-friendly front-end for algorithm interaction.<br />
     <br />💻 Technologies Used: Python, JavaScript, HTML, CSS, MongoDB, Express JS, Node.js, beautifulsoup library, selenium. sklearn. <br />
-    <br />🌐 Link: Contact me for demo.<br />
 `;
 addHTMLToElement("esportProject", esportProjectContent);
 
@@ -42,9 +41,56 @@ var videoGameProjectContent = `
   incorporates an LLM AI powered by a neural network and trained using a genetic algorithm to
   control NPC behavior.<br />
 <br />💻 Technologies Used: Linux, Godot game engine (GDScript), Python, sklearn.<br />
-<br />🌐 Link: Release date 01/3/2024<br />
 `;
 addHTMLToElement("videoGameProject", videoGameProjectContent);
+
+var aichatProjectContent = `
+
+💬 <strong>ChatGPT Clone</strong> 💬<br />
+<br />📝 Description: Running a local LLM on my home server, features include uncensored chat, text-to-image, and file uploading.<br />
+<br />💻 Technologies Used: Linux (Ubuntu), Python, SQLite, Docker, LLM, Rust.<br />
+`;
+addHTMLToElement("aichatProject", aichatProjectContent);
+
+var chessProjectContent = `
+
+♟️ <strong>ChessHub</strong> ♟️<br />
+<br />📝 Description: Multiplayer chess server with AI opponent.<br />
+<br />💻 Technologies Used: Java, Spring Boot, WebSocket, MySQL, Docker.<br />
+`;
+addHTMLToElement("chessProject", chessProjectContent);
+
+var aivoiceProjectContent = `
+
+🤖 <strong>AI Voice</strong> 🤖<br />
+<br />📝 Description: Voice recognition software using machine learning.<br />
+<br />💻 Technologies Used: Python, Flask, scikit-learn, TensorFlow, Docker.<br />
+`;
+addHTMLToElement("aivoiceProject", aivoiceProjectContent);
+
+var trademeProjectContent = `
+
+🚗 <strong>Car Trading</strong> 🚗<br />
+<br />📝 Description:  Utilised web scraping and API data from Trade Me to develop a program that streamlines the process of browsing car listings. <br />
+<br />💻 Technologies Used: Java, Discord API, BeautifulSoup, Web scraping, MySQL, Spring Boot.<br />
+`;
+addHTMLToElement("trademeProject", trademeProjectContent);
+
+var streamingProjectContent = `
+
+📺 <strong>Streaming Server</strong> 📺<br />
+<br />📝 Description:  Created a Netflix-like platform for personal use.<br />
+<br />💻 Technologies Used: JavaScript, HTML, CSS, Node.js, Express, MongoDB, Docker.<br />
+`;
+addHTMLToElement("streamingProject", streamingProjectContent);
+
+var saleschatProjectContent = `
+
+📊 <strong>SalesChat</strong> 📊<br />
+<br />📝 Description: Created a chatbot to automate messaging with potential customers<br />
+<br />💻 Technologies Used: : Python, Flask, Twilio API, PostgreSQL, Docker, JavaScript, HTML, CSS, NLP libraries.<br />
+`;
+addHTMLToElement("saleschatProject", saleschatProjectContent);
 
 var universityContent = `
 

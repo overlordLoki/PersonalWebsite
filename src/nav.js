@@ -34,6 +34,31 @@ document.getElementById("esportProjectbutton").onclick = function () {
 document.getElementById("videoGameProjectbutton").onclick = function () {
     toggleDisplay("videoGameProject");
 };
+
+document.getElementById("aichatProjectbutton").onclick = function () {
+    toggleDisplay("aichatProject");
+};
+
+document.getElementById("chessProjectbutton").onclick = function () {
+    toggleDisplay("chessProject");
+};
+
+document.getElementById("aivoiceProjectbutton").onclick = function () {
+    toggleDisplay("aivoiceProject");
+};
+
+document.getElementById("trademeProjectbutton").onclick = function () {
+    toggleDisplay("trademeProject");
+};
+
+document.getElementById("streamingProjectbutton").onclick = function () {
+    toggleDisplay("streamingProject");
+};
+
+document.getElementById("saleschatProjectbutton").onclick = function () {
+    toggleDisplay("saleschatProject");
+};
+
 // unibutton
 document.getElementById("unibutton").onclick = function () {
     toggleDisplay("uni");
