@@ -92,6 +92,16 @@ var saleschatProjectContent = `
 `;
 addHTMLToElement("saleschatProject", saleschatProjectContent);
 
+//hide projects by default
+document.getElementById("esportProject").style.display = "none";
+document.getElementById("videoGameProject").style.display = "none";
+document.getElementById("aichatProject").style.display = "none";
+document.getElementById("chessProject").style.display = "none";
+document.getElementById("aivoiceProject").style.display = "none";
+document.getElementById("trademeProject").style.display = "none";
+document.getElementById("streamingProject").style.display = "none";
+document.getElementById("saleschatProject").style.display = "none";
+
 var universityContent = `
 
 <strong>Victoria University of Wellington</strong>
